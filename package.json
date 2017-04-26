@@ -1,0 +1,53 @@
+{
+  "name": "internet-shortcut",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./distribution/index.js",
+  "scripts": {
+    "test": "jest --config .jest",
+    "prebuild": "npm test && rimraf distribution",
+    "build": "cross-env BABEL_ENV=production babel --out-dir distribution source",
+    "prepublish": "npm run nsp && npm run build",
+    "start": "npm run build && node ./distribution/index.js",
+    "watch:start": "chokidar \"source/*.js\" \"source/**/*.js\" -c \"npm run start\"",
+    "eslint": "eslint source",
+    "eslint:fix": "eslint --fix source",
+    "repl": "npm run build && babel-node",
+    "nsp": "nsp check",
+    "prettier": "prettier-eslint --prettier.single-quote false --write",
+    "prettier:all": "prettier-eslint --prettier.single-quote false --write \"source/**/*.js\"",
+    "watch:test": "jest --config .jest --watch",
+    "coverage": "jest --config .jest --coverage",
+    "coverage:open": "open ./coverage/lcov-report/index.html",
+    "watch:coverage": "jest --config .jest --coverage --watch"
+  },
+  "keywords": [],
+  "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "chokidar-cli": "^1.2.0",
+    "cross-env": "^4.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest-cli": "^19.0.2",
+    "nsp": "^2.6.3",
+    "prettier-eslint-cli": "^3.4.2",
+    "rimraf": "^2.6.1"
+  },
+  "files": [
+    "distribution",
+    "README.md"
+  ],
+  "dependencies": {
+    "x-ray": "^2.3.2"
+  }
+}
