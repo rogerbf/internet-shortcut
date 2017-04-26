@@ -49,5 +49,13 @@
   ],
   "dependencies": {
     "x-ray": "^2.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerbf/internet-shortcut.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerbf/internet-shortcut/issues"
+  },
+  "homepage": "https://github.com/rogerbf/internet-shortcut#readme"
 }
