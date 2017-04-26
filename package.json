@@ -1,7 +1,7 @@
 {
   "name": "internet-shortcut",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "create internet shortcut files (.url)",
   "main": "./distribution/index.js",
   "scripts": {
     "test": "jest --config .jest",
@@ -14,14 +14,17 @@
     "eslint:fix": "eslint --fix source",
     "repl": "npm run build && babel-node",
     "nsp": "nsp check",
-    "prettier": "prettier-eslint --prettier.single-quote false --write",
-    "prettier:all": "prettier-eslint --prettier.single-quote false --write \"source/**/*.js\"",
     "watch:test": "jest --config .jest --watch",
     "coverage": "jest --config .jest --coverage",
     "coverage:open": "open ./coverage/lcov-report/index.html",
     "watch:coverage": "jest --config .jest --coverage --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "InternetShortcut",
+    "shortcut",
+    "webloc",
+    "url"
+  ],
   "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
   "license": "MIT",
   "devDependencies": {
@@ -40,7 +43,6 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest-cli": "^19.0.2",
     "nsp": "^2.6.3",
-    "prettier-eslint-cli": "^3.4.2",
     "rimraf": "^2.6.1"
   },
   "files": [
